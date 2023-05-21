@@ -43,7 +43,7 @@ The website includes an admin dashboard that grants administrators access to var
 ---
 ## Screenshots
 Here's an example of how the product filtering page looks:
-(/screenshot/shop2.png)
-(/screenshot/signup.png)
-(/screenshot/order admin.png)
-(/screenshot/cart.png)
+([/screenshot/shop2.png](https://github.com/igNitesh/YOYOFashion/blob/master/screenshot/shop2.png))
+[(/screenshot/signup.png](https://github.com/igNitesh/YOYOFashion/blob/master/screenshot/signup.png))
+([/screenshot/order admin.png](https://github.com/igNitesh/YOYOFashion/blob/master/screenshot/order admin.png))
+([/screenshot/cart.png](https://github.com/igNitesh/YOYOFashion/blob/master/screenshot/cart.png))
