@@ -40,10 +40,18 @@ The website includes an admin dashboard that grants administrators access to var
 - Managing user accounts, including the ability to activate, deactivate, or delete accounts.
 - Generating reports and analytics to gain insights into sales, customer behavior, and website performance.
 
----
 ## Screenshots
-Here's an example of how the product filtering page looks:
-([/screenshot/shop2.png](https://github.com/igNitesh/YOYOFashion/blob/master/screenshot/shop2.png))
-[(/screenshot/signup.png](https://github.com/igNitesh/YOYOFashion/blob/master/screenshot/signup.png))
-([/screenshot/order admin.png](https://github.com/igNitesh/YOYOFashion/blob/master/screenshot/order admin.png))
-([/screenshot/cart.png](https://github.com/igNitesh/YOYOFashion/blob/master/screenshot/cart.png))
+Here are some screenshots showcasing different aspects of the website:
+
+### Product Filtering
+![Product Filtering](https://github.com/igNitesh/YOYOFashion/raw/master/screenshot/shop2.png)
+
+### User Registration
+![User Registration](https://github.com/igNitesh/YOYOFashion/raw/master/screenshot/signup.png)
+
+### Admin Order Management
+![Admin Order Management](https://github.com/igNitesh/YOYOFashion/raw/master/screenshot/order%20admin.png)
+
+### Shopping Cart
+![Shopping Cart](https://github.com/igNitesh/YOYOFashion/raw/master/screenshot/cart.png)
+
