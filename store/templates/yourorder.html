@@ -1,0 +1,73 @@
+{% extends 'base.html'%}
+{% load static %}
+{%block content %}
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f8f8;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .order-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .order-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        .order-item .item-info {
+            flex-grow: 1;
+        }
+
+        .order-item .item-info h3 {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .order-item .item-info p {
+            margin: 5px 0;
+        }
+
+        .order-item .item-price {
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+
+
+    <div class="container">
+        <h1>Order Details</h1>
+        {% for order in orders %}
+        <div class="order-item">
+            <img src="{{ order.product.image.url }}" alt="{{ order.product.name }}">
+            <div class="item-info">
+                <h3>{{ order.product.name }}</h3>
+                <p>Size: {{ order.product.size }}</p>
+                <p>Color: {{ order.product.color }}</p>
+            </div>
+            <span>Total Price: </span>
+            <div class="item-price">&#8377; {{ order.price }}</div>
+        </div>
+    {% endfor %}
+    </div>
+
+{%endblock%}
