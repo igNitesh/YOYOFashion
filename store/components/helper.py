@@ -30,23 +30,3 @@ def CartItems(request):
     return totalItem
 
 
-
-# def OTPSender(mobilenumber):
-#         account_sid = "AC0c2c1ed119553abb2cd147c07f4307eb"
-#         auth_token = "45ac466fdc23c26e2f85bf5945402c90"
-#         verify_sid = "VA5a3d44ea903aabdbe250494483672fa0"
-#         verified_number = "+91"+mobilenumber
-
-#         client = Client(account_sid, auth_token)
-
-#         otp = generate_otp()
-
-
-#         message = client.messages.create(
-#                               body=f"Your OTP is: {otp}",
-#                               from_="+9999999",
-#                               to=verified_number
-#                           )
-
-#         print(message.sid)
-#         return otp
