@@ -41,5 +41,9 @@ The website includes an admin dashboard that grants administrators access to var
 - Generating reports and analytics to gain insights into sales, customer behavior, and website performance.
 
 ---
-
-
+## Screenshots
+Here's an example of how the product filtering page looks:
+(/screenshot/shop2.png)
+(/screenshot/signup.png)
+(/screenshot/order admin.png)
+(/screenshot/cart.png)
