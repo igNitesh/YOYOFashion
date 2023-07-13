@@ -4,8 +4,6 @@ from django.shortcuts import render, redirect
 from store.models.customer import Customer
 from django.contrib.auth import authenticate, login
 from django.contrib.sessions.backends.db import SessionStore
-from .helper import OTPSender
-
 
 class signup(View):
     def get(self, request):
@@ -28,9 +26,6 @@ class signup(View):
             return render(request, template_name='signup.html', context=context)
 
         if Password == re_pass:
-            # OTP verification
-            # otp = OTPSender(Phone)
-            # print("send otp = : ",otp)
             customer.password = make_password(customer.password)
             customer.register()
             # Create a session for the registered user
@@ -71,22 +66,6 @@ def logout(request):
     return redirect('login')
 
 
-class OTPVerificationView(View):
-    def get(self, request):
-        return render(request, 'OTP_verification.html')
-
-    def post(self, request):
-        user_otp = request.POST.get('otp')
-        saved_otp = request.session.get('otp')
-
-
-        print("user otp = ",user_otp," saved otp ",saved_otp)
-        if user_otp == saved_otp:
-            return redirect('homepage')
-        else:
-            error_message = 'Invalid OTP'
-            context = {'error': error_message}
-            return render(request, 'OTP_verification.html', context=context)
 
 
     

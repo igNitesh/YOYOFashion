@@ -10,10 +10,10 @@ class cart(View):
         customer_email = request.session.get('email')
         customer = Customer.objects.get(email=customer_email)
         cart = Cart.objects.filter(customer=customer)
-        Total_number_product = CartItems(request)
+        total_item_in_cart = CartItems(request)
         context = {
             'carts' : cart,
-            'Total'      : Total_number_product,
+            'nuber_items_cart': total_item_in_cart,
         }
         return render(request,template_name='cart.html',context=context)
     def post(sefl,request):

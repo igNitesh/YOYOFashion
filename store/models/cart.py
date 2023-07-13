@@ -10,7 +10,8 @@ class Cart(models.Model):
     customer = models.ForeignKey(Customer,
                                  on_delete=models.CASCADE)
     quantity = models.IntegerField(default=1)
-
+    colour = models.CharField(max_length=50,default='')
+    size = models.CharField(max_length=50,default='')
     def add_to_cart(self):
         self.save()
 

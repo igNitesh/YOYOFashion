@@ -44,6 +44,8 @@ The website includes an admin dashboard that grants administrators access to var
 Here are some screenshots showcasing different aspects of the website:
 
 ### Product Filtering
+![Product Filtering](https://github.com/igNitesh/YOYOFashion/raw/master/screenshot/homepage.png)
+### Product Filtering
 ![Product Filtering](https://github.com/igNitesh/YOYOFashion/raw/master/screenshot/shop2.png)
 
 ### User Registration

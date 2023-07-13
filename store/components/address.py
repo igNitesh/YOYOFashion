@@ -2,7 +2,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.views import View
 from django.contrib.auth.hashers import make_password ,check_password
 from store.models.customer import Customer
-
+from .helper import CartItems ,categories_and_subcategories
 
 class Address(View):
     def get(self,request):
@@ -13,7 +13,15 @@ class Address(View):
             return redirect('login') 
         else:
             customer = Customer.get_customer_by_email(email)
-        context ={'user_address' : customer}
+
+        cat_and_subcat = categories_and_subcategories()
+        total_item_in_cart = CartItems(request)
+        context = {
+                    'user_address' : customer,
+                    'categories' : cat_and_subcat.get('categories'),
+                    'subcategories' : cat_and_subcat.get('subcategories'),
+                    'nuber_items_cart' : total_item_in_cart,
+                }
         return render(request,template_name='address.html' , context = context)
 
     def post(self, request):
@@ -75,7 +83,14 @@ def edit_address(request):
     'Chandigarh',
     'Delhi',
     ]
-    context = {"states" : states}
+    cat_and_subcat = categories_and_subcategories()
+    total_item_in_cart = CartItems(request)
+    context = {
+                "states" : states,
+                'nuber_items_cart' : total_item_in_cart,
+                'categories' : cat_and_subcat.get('categories'),
+                'subcategories' : cat_and_subcat.get('subcategories')
+                }
 
 
     return render(request,template_name='edit_address.html',context = context )

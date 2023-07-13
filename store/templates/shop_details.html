@@ -41,82 +41,80 @@
                 </div>
                 <h3 class="font-weight-semi-bold mb-4">&#8377;{{product_detail.price}}</h3>
                 <p class="mb-4">{{product_detail.description}}</p>
-                <div class="d-flex mb-3">
-                    <strong class="text-dark mr-3">Sizes:</strong>
-                    <form>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-1" name="size">
-                            <label class="custom-control-label" for="size-1">XS</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-2" name="size">
-                            <label class="custom-control-label" for="size-2">S</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-3" name="size">
-                            <label class="custom-control-label" for="size-3">M</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-4" name="size">
-                            <label class="custom-control-label" for="size-4">L</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-5" name="size">
-                            <label class="custom-control-label" for="size-5">XL</label>
-                        </div>
-                    </form>
-                </div>
-                <div class="d-flex mb-4">
-                    <strong class="text-dark mr-3">Colors:</strong>
-                    <form>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="color-1" name="color">
-                            <label class="custom-control-label" for="color-1">Black</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="color-2" name="color">
-                            <label class="custom-control-label" for="color-2">White</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="color-3" name="color">
-                            <label class="custom-control-label" for="color-3">Red</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="color-4" name="color">
-                            <label class="custom-control-label" for="color-4">Blue</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="color-5" name="color">
-                            <label class="custom-control-label" for="color-5">Green</label>
-                        </div>
-                    </form>
-                </div>
-
-                {% comment %} handling add to cart {% endcomment %}
                 <form method="POST" action="/shop_details">
                     {% csrf_token %}
-                    <div class="d-flex align-items-center mb-4 pt-2">
-                        <div class="input-group quantity mr-3" style="width: 130px;">
-                            <div class="input-group-btn">
-                                <span class="btn btn-primary btn-minus" id="decrease-quantity">
-                                    <i class="fa fa-minus"></i>
-                                </span>
+                        <div class="d-flex mb-3">
+                            <strong class="text-dark mr-3">Sizes:</strong>
+
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="size-1" name="size" value="XS">
+                                <label class="custom-control-label" for="size-1">XS</label>
                             </div>
-                            <input type="text" class="form-control bg-secondary border-0 text-center" value="1" id = "quantity" name = "quantity">
-                           
-                            <div class="input-group-btn">
-                                <span class="btn btn-primary btn-plus" id="increase-quantity">
-                                    <i class="fa fa-plus"></i>
-                                </span>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="size-2" name="size" value="S">
+                                <label class="custom-control-label" for="size-2">S</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="size-3" name="size"  value="M">
+                                <label class="custom-control-label" for="size-3">M</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="size-4" name="size" value="XS">
+                                <label class="custom-control-label" for="size-4">L</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="size-5" name="size" value="XS">
+                                <label class="custom-control-label" for="size-5">XL</label>
                             </div>
                         </div>
-                        
-                        <input hidden  type="text"  value={{product_detail.id}} id = "product" name="product">
-                        <button class="btn btn-primary px-3" type = "submit"><i class="fa fa-shopping-cart mr-1"></i> Add To
-                            Cart</button>
-                    </div>
-            
-                </form>
+                        <div class="d-flex mb-4">
+                            <strong class="text-dark mr-3">Colors:</strong>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="color-1" name="color" value="black" >
+                                <label class="custom-control-label" for="color-1">Black</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="color-2" name="color" value="White">
+                                <label class="custom-control-label" for="color-2">White</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="color-3" name="color" value="red">
+                                <label class="custom-control-label" for="color-3">Red</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="color-4" name="color" value="blue">
+                                <label class="custom-control-label" for="color-4">Blue</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="color-5" name="color" value="green">
+                                <label class="custom-control-label" for="color-5">Green</label>
+                            </div>
+                        </div>
+
+                        {% comment %} handling add to cart {% endcomment %}
+                        <div class="d-flex align-items-center mb-4 pt-2">
+                            <div class="input-group quantity mr-3" style="width: 130px;">
+                                <div class="input-group-btn">
+                                    <span class="btn btn-primary btn-minus" id="decrease-quantity">
+                                        <i class="fa fa-minus"></i>
+                                    </span>
+                                </div>
+                                <input type="text" class="form-control bg-secondary border-0 text-center" value="1"
+                                    id="quantity" name="quantity">
+
+                                <div class="input-group-btn">
+                                    <span class="btn btn-primary btn-plus" id="increase-quantity">
+                                        <i class="fa fa-plus"></i>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <input hidden type="text" value={{product_detail.id}} id="product" name="product">
+                            <button class="btn btn-primary px-3" type="submit"><i class="fa fa-shopping-cart mr-1"></i> Add
+                                To
+                                Cart</button>
+                        </div>
+                    </form>
 
                 {% comment %} ........... {% endcomment %}
                 <div class="d-flex pt-2">
@@ -259,7 +257,7 @@
 
 
 <!-- Products Start -->
-<div class="container-fluid py-5">
+<!-- <div class="container-fluid py-5">
     <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">You May Also
             Like</span></h2>
     <div class="row px-xl-5">
@@ -297,7 +295,7 @@
 
         </div>
     </div>
-</div>
+</div> -->
 <!-- Products End -->
 
 

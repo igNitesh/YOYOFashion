@@ -20,14 +20,14 @@ class order(View):
             cart_items = Cart.objects.filter(customer=customer)
             total = cart_items.aggregate(total_price=Sum(F('product__price') * F('quantity')))['total_price']
         
-        Total_number_product = CartItems(request)
+        total_item_in_cart = CartItems(request)
 
             
         context ={
             'user_address' : customer,
             'carts'  : cart_items,
             'Totalcost' : total,
-            'Total'      : Total_number_product,
+            'nuber_items_cart' : total_item_in_cart
 
             }
         return render(request,template_name='order.html',context=context)
@@ -54,21 +54,5 @@ class order(View):
 
         # Clear the cart items
         cart_items.delete()
-        print("Order sucessful......")
-        return redirect('homepage')
+        return render(request,template_name='order_confirmation.html')
 
-# def send_order_confirmation_email(customer_email, order_id):
-#     subject = "Order Confirmation"
-#     message = render_to_string('order_confirmation_email.html', {
-#         'customer_email': customer_email,
-#         'order_number': order_number,
-#         'items_ordered': items_ordered,
-#         'quantities': quantities,
-#         'subtotal': subtotal,
-#         'shipping': shipping,
-#         'tax': tax,
-#         'total': total,
-#         'shipping_address': shipping_address,
-#         'order_tracking_link': order_tracking_link
-#     })
-#     send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [customer_email])
